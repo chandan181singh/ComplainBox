@@ -1,0 +1,103 @@
+//import java.io.File;
+import java.io.*;
+// import java.io.FileWriter;
+// import java.io.IOException;
+import java.util.Scanner;
+
+public class Q1 {
+    public static void main(String[] args){
+        try{
+            File F3 = new File("F3.txt");
+            // if(F3.createNewFile()){
+            //     System.out.println("File Name "+F3.getName());
+            // }
+            // else{
+            //     System.out.println(F3.getName()+" File Already Exists");
+            // }
+            // if(F3.exists()){
+            //  System.out.println("Size : "+F3.length());
+            // }
+            // else{
+            //     System.out.println("File not Exits");
+            // }
+
+            
+            // FileWriter FW = new FileWriter("F3.txt");
+
+            // Scanner sc = new Scanner(System.in);
+            // String S = sc.nextLine();
+            // FW.write(S);
+            // FW.close();
+            // Scanner sc2 = new Scanner(F3);
+           
+           // if(F3.length() != 0) count = 1;
+            // while(sc2.hasNextLine()){
+            //     String data = sc2.nextLine();
+            //     System.out.println(data);
+            // }
+            String s1 = ""; 
+           BufferedReader BR = new BufferedReader(new FileReader("F3.txt"));
+           int wcount = 0;
+           while((s1 = BR.readLine()) != null){
+                String[] words = s1.split(" ");
+                wcount += words.length;
+           }
+           System.out.println(wcount);
+
+            
+        }catch(IOException IOx){
+            System.out.println(IOx+" Error Occured and handled");
+        }
+    }
+}
+
+
+//OUPUT
+
+import java.io.*;
+import java.util.*;
+public class merge {
+    
+
+    public static void main(String[] args){ 
+        try{
+            File F4 = new File("F4.txt");
+           if(F4.createNewFile()){
+            System.out.println("File name "+ F4.getName());
+           }
+           else System.out.println(F4.getName()+" Already Exits");
+    
+           BufferedReader Br = new BufferedReader(new FileReader("F4.txt"));
+    
+           FileWriter Fw = new FileWriter("F4.txt");
+           Fw.write("This is java programming");
+          
+           Scanner sc = new Scanner(F4);
+    
+           File F3 = new File("F3.txt");
+            Scanner sc2 = new Scanner(F3);
+    
+            while(sc2.hasNextLine()){
+                Fw.write(sc2.nextLine());
+            }
+            Fw.close();
+            while(sc.hasNextLine()){
+                String data = sc.nextLine();
+                System.out.println(data);
+            }
+            String s ="";
+            int count = 0;
+           while((s = Br.readLine()) != null){
+                 String[] words = s.split(" ");
+                count += words.length;
+           }
+           System.out.println(count);
+        }
+        catch(IOException IOx){
+            System.out.println(IOx);
+        }
+     
+    }
+    
+} 
+
